@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 7644d4412e9f3624fa6b44312c0ad613
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _laserBullet: {fileID: 1082580624576083643, guid: 13bd415b68e0d714498f71536ad668e9, type: 3}
+  - _playerPrefab: {fileID: 1036747787143496885, guid: 8b1f75f058d394649b92c3d1201df377, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
