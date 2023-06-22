@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private int _playerSpeed = 4;
+    private PlayerClass _player;
     [SerializeField]
     private GameObject _laserBullet;
     [SerializeField]
@@ -20,8 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _Pooler = FindObjectOfType<ObjectPooler>();
-        Mesh mesh = GetComponent<MeshFilter>().mesh;
-        _playerBounds = mesh.bounds;
+        _playerBounds = _player.mesh.bounds;
     }
 
     void Update()
@@ -46,7 +45,18 @@ public class PlayerController : MonoBehaviour
     {
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
-        transform.Translate(new Vector3(horizontal, vertical, 0) * _playerSpeed * Time.deltaTime);
+        transform.Translate(new Vector3(horizontal, vertical, 0) * _player.playerSpeed * Time.deltaTime);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Enemy")
+        {
+            _player.DealDamageToPlayer();
+            if(_player.health <= 0)
+            {
+                GameManager.GameOver();
+            }
+        }
     }
     private void CalmpPlayerMovement()
     {

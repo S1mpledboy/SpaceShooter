@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1036747787143496891}
   - component: {fileID: 1036747787143496884}
   - component: {fileID: 1036747787143496888}
+  - component: {fileID: -3079351165100228708}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,5 +111,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7644d4412e9f3624fa6b44312c0ad613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 4
+  _player: {fileID: 0}
   _laserBullet: {fileID: 1082580624576083643, guid: 13bd415b68e0d714498f71536ad668e9, type: 3}
+  _Pooler: {fileID: 0}
+  _frireRate: 0.3
+--- !u!114 &-3079351165100228708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036747787143496885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecff09b90275f1429df570765bd400c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 4
+  playerHealth: 3
+  mesh: {fileID: 0}
